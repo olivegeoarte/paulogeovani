@@ -1,0 +1,112 @@
+﻿<html>
+	<head>
+   <!-- <meta http-equiv="X-UA-Compatible" content="chrome=1" />-->
+   <meta charset="utf-8"/>
+   		<style type="text/css">
+        Body{ color:#FFF;}
+        </style>
+		<script type="text/javascript" src="dao.js"></script>
+		<script type="text/javascript" src="controler.js"></script>
+        
+        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+        <script type="text/javascript" charset="utf-8" src="camera.js"></script>
+        
+      	<script type="text/javascript" src="http://code.jquery.com/jquery-1.5.min.js"></script> 
+      	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.js"></script> 
+      	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.css" /> 
+
+       	<script type="text/javascript">
+           
+	  	$(document).ready(function(){
+			var conexao = new Conexao();
+			model = new DAOCompras();
+			controler = new Controler();
+	  	});	          
+		   
+       	</script>
+        
+    </head>
+	<header>Prova Final</header>
+	<body>
+    
+ <!------------------------Pagina principal------------------------------------>   
+  <div data-role="page" data-theme="a" id="home">
+        	<div data-role="header">
+				<h1>Cadastro de prestador de serviços</h1>
+			</div>
+            <div data-role="fieldcontain" align="center">
+            <table>
+            <thead align=>
+            <tr><th><h2>Nome -</h2></th> 
+            	<th><h2>Telefone -</h2></th>
+                
+            </tr>
+            
+        	<tbody align="center" border="1" id="divLista">
+       		</tbody>
+            </table>
+            </div>
+            <a href="#home"  data-role="button" data-transition="slideup" onClick="controler.ler()">Ler Valor</a>
+            <a href="#form"  data-role="button" data-transition="slideup" data-mini="true">Operações</a>
+            
+       
+	        <div data-role="footer">
+				<h1>Paulo Geovani</h1>
+			</div>
+       	</div>
+       
+       
+       
+       
+       
+<!---------------------------------------------------------------------->
+       <div data-role="page" data-theme="a" id="form">
+       		<div data-role="header">
+				<h1>Cadastro de prestador de serviços</h1>
+			</div>
+            <div data-role="content" data-role="fieldcontain">
+                
+                Indice:
+                <input type="text" id="id"/>
+                
+                Nome:                
+                <!--<input type="text" id="txt2" />-->
+                <input type="text" name="name" id="name" value="">
+                
+                telefone:                
+                <input type="text" name="phone" id="phone" value="">
+                
+               <!-- servico:                
+                <input type="text" id="txt4" />
+                
+                
+                <!--<select name="servico" id="servico">
+                        <option value=""></option>
+                        <option value="pintor">Pintor</option>
+                        <option value="pedreiro">Pedreiro</option>
+                        <option value="jardineiro">Jardineiro</option>
+                        <option value="outro">Outro</option>
+                     </select>-->
+                <br>
+                
+                <button onClick="capturePhoto();">Capturar uma foto</button>
+                
+                <div data-role="controlgroup" data-type="vertical">
+                <a href="#home"  data-role="button" data-transition="slideup" onClick="controler.inserir()">Adicionar</a>  
+                <!--<a href="#home"  data-role="button" data-transition="slideup" onClick="controler.ler()">Ler Valor</a>-->
+                <a href="#home"  data-role="button" data-transition="slideup" onClick="controler.remover()">Remover</a>
+                <a href="#home"  data-role="button" data-transition="slideup" onClick="controler.alterar()">Alterar</a>
+                </div>
+                
+                
+                	
+            </div>
+            <div data-role="footer">
+				<h1>Rodapé</h1>
+			</div>
+        </div>
+ <!--------------------------------------------------------->      
+        
+            
+    </body>
+</html>
